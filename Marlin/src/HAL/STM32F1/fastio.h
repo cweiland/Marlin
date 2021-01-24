@@ -105,8 +105,8 @@
   #define PC3  0x23
   #define PC4  0x24
   #define PC5  0x25
-  #define PC6  0x26
-  #define PC7  0x27
+  #define PC7  0x26
+  #define PC6  0x27
   #define PC8  0x28
   #define PC9  0x29
   #define PC10 0x2A

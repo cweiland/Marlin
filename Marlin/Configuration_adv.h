@@ -373,13 +373,13 @@
  * The fan turns on automatically whenever any driver is enabled and turns
  * off (or reduces to idle speed) shortly after drivers are turned off.
  */
-#define USE_CONTROLLER_FAN
+//#define USE_CONTROLLER_FAN
 #if ENABLED(USE_CONTROLLER_FAN)
   #define CONTROLLER_FAN_PIN PC7        // Set a custom pin for the controller fan
   //#define CONTROLLER_FAN_USE_Z_ONLY    // With this option only the Z axis is considered
   //#define CONTROLLER_FAN_IGNORE_Z      // Ignore Z stepper. Useful when stepper timeout is disabled.
   #define CONTROLLERFAN_SPEED_MIN      0 // (0-255) Minimum speed. (If set below this value the fan is turned off.)
-  #define CONTROLLERFAN_SPEED_ACTIVE 255 // (0-255) Active speed, used when any motor is enabled
+  #define CONTROLLERFAN_SPEED_ACTIVE 127 // (0-255) Active speed, used when any motor is enabled
   #define CONTROLLERFAN_SPEED_IDLE     0 // (0-255) Idle speed, used when motors are disabled
   #define CONTROLLERFAN_IDLE_TIME     60 // (seconds) Extra time to keep the fan running after disabling motors
   #define CONTROLLER_FAN_EDITABLE      // Enable M710 configurable settings
@@ -408,8 +408,8 @@
  *
  * Define one or both of these to override the default 0-255 range.
  */
-//#define FAN_MIN_PWM 50
-//#define FAN_MAX_PWM 128
+//#define FAN_MIN_PWM 200
+//#define FAN_MAX_PWM 104
 
 /**
  * FAST PWM FAN Settings
@@ -1659,10 +1659,10 @@
 
 #if EITHER(MESH_BED_LEVELING, AUTO_BED_LEVELING_UBL)
   // Override the mesh area if the automatic (max) area is too large
-  //#define MESH_MIN_X MESH_INSET
-  //#define MESH_MIN_Y MESH_INSET
-  //#define MESH_MAX_X X_BED_SIZE - (MESH_INSET)
-  //#define MESH_MAX_Y Y_BED_SIZE - (MESH_INSET)
+  #define MESH_MIN_X MESH_INSET
+  #define MESH_MIN_Y MESH_INSET
+  #define MESH_MAX_X X_BED_SIZE - (MESH_INSET)
+  #define MESH_MAX_Y Y_BED_SIZE - (MESH_INSET)
 #endif
 
 /**
